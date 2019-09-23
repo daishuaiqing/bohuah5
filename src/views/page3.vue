@@ -1,7 +1,23 @@
+<style scoped>
+.scaleUp-enter-active,
+.scaleUp-leave-active {
+  transition: all 0.3s linear;
+}
+.scaleUp-leave-active {
+  transform: translateY(-100%);
+}
+.page {
+  height: 100vh;
+  width: 100vw;
+  background: url(../assets/地铁线路图.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+</style>
+
 <template>
   <transition name="scaleUp">
     <div class="page" id="start">
-      <p>这是第三页</p>
     </div>
   </transition>
 </template>
@@ -33,20 +49,20 @@ export default {
         case "touchend":
           var spanX = event.changedTouches[0].pageX - this.startX;
           var spanY = event.changedTouches[0].pageY - this.startY;
-          console.log('spanY', spanY)
+          console.log("spanY", spanY);
           if (spanY < -30) {
             // 向上
-            this.$router.push("/");
-          }else if(spanY > 30){
+            this.$router.push("/page4");
+          } else if (spanY > 30) {
             //向下
-            this.$router.push("/page2");
+            this.$router.push("/page3");
           }
           if (Math.abs(spanX) > Math.abs(spanY)) {
             // 认定为水平方向滑动
-            console.log("水平方向滑动")
+            console.log("水平方向滑动");
           } else {
             // 认定为垂直方向滑动
-            console.log("垂直方向滑动")
+            console.log("垂直方向滑动");
           }
           break;
         case "touchmove":
@@ -65,21 +81,3 @@ export default {
   }
 };
 </script>
-
-<style>
-body{
-    margin: 0;
-    padding: 0;
-}
-.scaleUp-enter-active,
-.scaleUp-leave-active {
-  transition: all 0.3s linear;
-}
-.scaleUp-leave-active {
-  transform: translateY(-100%);
-}
-.page{
-    border: 1px solid red;
-    height: 100vh;
-}
-</style>

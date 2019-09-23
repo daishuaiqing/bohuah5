@@ -1,7 +1,39 @@
+<style scoped>
+body{
+    margin: 0;
+    padding: 0;
+}
+.scaleUp-enter-active,
+.scaleUp-leave-active {
+  transition: all 0.5s linear;
+}
+.scaleUp-leave-active {
+  transform: translateY(-100%);
+}
+.page {
+  height: 100vh;
+  background: url(../assets/2.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.top_pic{
+  margin-top: 5vw;
+  width: 70vw;
+}
+.bt_pic{
+  position: absolute;
+  bottom: 10vw;
+  right: 0;
+  width: 90vw;
+}
+
+</style>
+
 <template>
   <transition name="scaleUp">
     <div class="page" id="start">
-      <p>这是第二页</p>
+      <img class="top_pic" src="../assets/2-1.png" alt="">
+      <img class="bt_pic" src="../assets/2-2.png" alt="">
     </div>
   </transition>
 </template>
@@ -65,21 +97,3 @@ export default {
   }
 };
 </script>
-
-<style>
-body{
-    margin: 0;
-    padding: 0;
-}
-.scaleUp-enter-active,
-.scaleUp-leave-active {
-  transition: all 0.3s linear;
-}
-.scaleUp-leave-active {
-  transform: translateY(-100%);
-}
-.page{
-    border: 1px solid red;
-    height: 100vh;
-}
-</style>

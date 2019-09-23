@@ -1,8 +1,6 @@
 <template>
   <transition name="scaleUp">
-    <div class="page" id="start">
-      <p>这是第一页</p>
-    </div>
+    <div class="page" id="start"></div>
   </transition>
 </template>
 
@@ -33,20 +31,20 @@ export default {
         case "touchend":
           var spanX = event.changedTouches[0].pageX - this.startX;
           var spanY = event.changedTouches[0].pageY - this.startY;
-          console.log('spanY', spanY)
+          console.log("spanY", spanY);
           if (spanY < -30) {
             // 向上
             this.$router.push("/page2");
-          }else if(spanY > 30){
+          } else if (spanY > 30) {
             //向下
             this.$router.push("/page3");
           }
           if (Math.abs(spanX) > Math.abs(spanY)) {
             // 认定为水平方向滑动
-            console.log("水平方向滑动")
+            console.log("水平方向滑动");
           } else {
             // 认定为垂直方向滑动
-            console.log("垂直方向滑动")
+            console.log("垂直方向滑动");
           }
           break;
         case "touchmove":
@@ -66,20 +64,18 @@ export default {
 };
 </script>
 
-<style>
-body{
-    margin: 0;
-    padding: 0;
-}
+<style scoped>
 .scaleUp-enter-active,
 .scaleUp-leave-active {
-  transition: all 0.3s linear;
+  transition: all 0.5s linear;
 }
 .scaleUp-leave-active {
   transform: translateY(-100%);
 }
-.page{
-    border: 1px solid red;
-    height: 100vh;
+.page {
+  height: 100vh;
+  background: url(../assets/1.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 </style>
