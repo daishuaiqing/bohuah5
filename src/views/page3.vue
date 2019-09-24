@@ -1,11 +1,4 @@
 <style scoped>
-.scaleUp-enter-active,
-.scaleUp-leave-active {
-  transition: all 0.3s linear;
-}
-.scaleUp-leave-active {
-  transform: translateY(-100%);
-}
 .page {
   height: 100vh;
   width: 100vw;
@@ -16,10 +9,8 @@
 </style>
 
 <template>
-  <transition name="scaleUp">
-    <div class="page" id="start">
+    <div class="page" id="start3">
     </div>
-  </transition>
 </template>
 
 <script>
@@ -55,7 +46,7 @@ export default {
             this.$router.push("/page4");
           } else if (spanY > 30) {
             //向下
-            this.$router.push("/page3");
+            this.$router.push("/page2");
           }
           if (Math.abs(spanX) > Math.abs(spanY)) {
             // 认定为水平方向滑动
@@ -74,7 +65,7 @@ export default {
   },
   mounted() {
     // 给被滑动对象添加事件
-    let element = document.getElementById("start");
+    let element = document.getElementById("start3");
     this.addHandler(element, "touchstart", this.handleTouchEvent);
     this.addHandler(element, "touchend", this.handleTouchEvent);
     this.addHandler(element, "touchmove", this.handleTouchEvent);

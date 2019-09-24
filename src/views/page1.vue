@@ -1,7 +1,5 @@
 <template>
-  <transition name="scaleUp">
-    <div class="page" id="start"></div>
-  </transition>
+  <div class="page" id="start1"></div>
 </template>
 
 <script>
@@ -56,7 +54,7 @@ export default {
   },
   mounted() {
     // 给被滑动对象添加事件
-    let element = document.getElementById("start");
+    let element = document.getElementById("start1");
     this.addHandler(element, "touchstart", this.handleTouchEvent);
     this.addHandler(element, "touchend", this.handleTouchEvent);
     this.addHandler(element, "touchmove", this.handleTouchEvent);
@@ -65,13 +63,6 @@ export default {
 </script>
 
 <style scoped>
-.scaleUp-enter-active,
-.scaleUp-leave-active {
-  transition: all 0.5s linear;
-}
-.scaleUp-leave-active {
-  transform: translateY(-100%);
-}
 .page {
   height: 100vh;
   background: url(../assets/1.png);
