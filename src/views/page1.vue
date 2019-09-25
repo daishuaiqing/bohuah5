@@ -29,20 +29,16 @@ export default {
         case "touchend":
           var spanX = event.changedTouches[0].pageX - this.startX;
           var spanY = event.changedTouches[0].pageY - this.startY;
-          console.log("spanY", spanY);
           if (spanY < -30) {
             // 向上
             this.$router.push("/page2");
-          } else if (spanY > 30) {
-            //向下
-            this.$router.push("/page3");
           }
           if (Math.abs(spanX) > Math.abs(spanY)) {
             // 认定为水平方向滑动
-            console.log("水平方向滑动");
+            // console.log("水平方向滑动");
           } else {
             // 认定为垂直方向滑动
-            console.log("垂直方向滑动");
+            // console.log("垂直方向滑动");
           }
           break;
         case "touchmove":

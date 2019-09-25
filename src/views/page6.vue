@@ -22,6 +22,11 @@ width: 100vw;
 width: 100vw;
   height: 15vh;
 }
+.tip img{
+  position: absolute;
+  bottom: 5vh;
+  width: 50vw;
+}
 </style>
 
 <template>
@@ -30,6 +35,7 @@ width: 100vw;
     <div class="area_up_mid" @click="gotoDetail(2)"></div>
     <div class="area_mid" @click="gotoDetail(3)"></div>
     <div class="area_low" @click="gotoDetail(4)"></div>
+    <div class="tip"><img src="../assets/楼层图-1.png" alt=""></div>
   </div>
 </template>
 
@@ -63,20 +69,20 @@ export default {
         case "touchend":
           var spanX = event.changedTouches[0].pageX - this.startX;
           var spanY = event.changedTouches[0].pageY - this.startY;
-          console.log("spanY", spanY);
-          if (spanY < -30) {
+          // console.log("spanY", spanY);
+          if (spanY < -50) {
             // 向上
             this.$router.push("/page7");
-          } else if (spanY > 30) {
+          } else if (spanY > 50) {
             //向下
             this.$router.push("/page5");
           }
           if (Math.abs(spanX) > Math.abs(spanY)) {
             // 认定为水平方向滑动
-            console.log("水平方向滑动");
+            // console.log("水平方向滑动");
           } else {
             // 认定为垂直方向滑动
-            console.log("垂直方向滑动");
+            // console.log("垂直方向滑动");
           }
           break;
         case "touchmove":

@@ -3,6 +3,7 @@
   height: 100vh;
   width: 100vw;
   background: #e6e8ea;
+  overflow-y: auto;
 }
 .header img {
   width: 100vw;
@@ -32,6 +33,8 @@
   color: #f0f1f2;
   text-align: center;
   line-height: 12vw;
+  margin-bottom: 5vw;
+  font-size: 4vw;
 }
 .item_icon {
   width: 6vw;
@@ -131,17 +134,17 @@ export default {
         case "touchend":
           var spanX = event.changedTouches[0].pageX - this.startX;
           var spanY = event.changedTouches[0].pageY - this.startY;
-          console.log("spanY", spanY);
+          // console.log("spanY", spanY);
           if (spanY > 30) {
             //向下
             this.$router.push("/page6");
           }
           if (Math.abs(spanX) > Math.abs(spanY)) {
             // 认定为水平方向滑动
-            console.log("水平方向滑动");
+            // console.log("水平方向滑动");
           } else {
             // 认定为垂直方向滑动
-            console.log("垂直方向滑动");
+            // console.log("垂直方向滑动");
           }
           break;
         case "touchmove":

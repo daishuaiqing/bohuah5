@@ -28,8 +28,8 @@
   align-items: center;
 }
 .swiper-item img {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 }
 </style>
 
@@ -37,19 +37,19 @@
   <div class="page" id="start5">
     <swiper :options="swiperOption" class="swiper-box">
       <swiper-slide class="swiper-item">
-          <img src="../assets/实景图-1.png" alt="">
+        <img src="../assets/实景图-1.png" alt />
       </swiper-slide>
       <swiper-slide class="swiper-item">
-          <img src="../assets/实景图-2.png" alt="">
+        <img src="../assets/实景图-2.png" alt />
       </swiper-slide>
       <swiper-slide class="swiper-item">
-          <img src="../assets/实景图-3.png" alt="">
+        <img src="../assets/实景图-3.png" alt />
       </swiper-slide>
       <swiper-slide class="swiper-item">
-          <img src="../assets/实景图-4.png" alt="">
+        <img src="../assets/实景图-4.png" alt />
       </swiper-slide>
       <swiper-slide class="swiper-item">
-          <img src="../assets/实景图-5.png" alt="">
+        <img src="../assets/实景图-5.png" alt />
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -93,20 +93,19 @@ export default {
         case "touchend":
           var spanX = event.changedTouches[0].pageX - this.startX;
           var spanY = event.changedTouches[0].pageY - this.startY;
-          console.log("spanY", spanY);
-          if (spanY < -30) {
-            // 向上
-            this.$router.push("/page6");
-          } else if (spanY > 30) {
-            //向下
-            this.$router.push("/page4");
-          }
           if (Math.abs(spanX) > Math.abs(spanY)) {
             // 认定为水平方向滑动
-            console.log("水平方向滑动");
+            // console.log("水平方向滑动");
           } else {
             // 认定为垂直方向滑动
-            console.log("垂直方向滑动");
+            // console.log("垂直方向滑动");
+            if (spanY < -50) {
+              // 向上
+              this.$router.push("/page6");
+            } else if (spanY > 50) {
+              //向下
+              this.$router.push("/page4");
+            }
           }
           break;
         case "touchmove":
