@@ -51,7 +51,6 @@
 input {
   outline: none;
 }
-
 </style>
 
 <template>
@@ -64,58 +63,89 @@ input {
         <div>
           <img class="item_icon" src="../assets/销售型H5-27.png" alt />
         </div>
-        <input class="item_input" type="text" placeholder="租赁类别(Leasing)" />
+        <input v-model="leasinger.type" class="item_input" type="text" placeholder="租赁类别(Leasing)" />
       </div>
       <div class="item">
         <div>
           <img class="item_icon" src="../assets/销售型H5-28.png" alt />
         </div>
-        <input class="item_input" type="text" placeholder="姓名(Name)" />
+        <input v-model="leasinger.name" class="item_input" type="text" placeholder="姓名(Name)" />
       </div>
       <div class="item">
         <div>
           <img class="item_icon" src="../assets/销售型H5-29.png" alt />
         </div>
-        <input class="item_input" type="text" placeholder="公司(Company)" />
+        <input v-model="leasinger.company" class="item_input" type="text" placeholder="公司(Company)" />
       </div>
       <div class="item">
         <div>
           <img class="item_icon" src="../assets/销售型H5-30.png" alt />
         </div>
-        <input class="item_input" type="text" placeholder="电子邮件(E-mail)" />
+        <input v-model="leasinger.email" class="item_input" type="text" placeholder="电子邮件(E-mail)" />
       </div>
       <div class="item">
         <div>
           <img class="item_icon" src="../assets/销售型H5-31.png" alt />
         </div>
-        <input class="item_input" type="text" placeholder="手机(Tel.)" />
+        <input v-model="leasinger.tel" class="item_input" type="text" placeholder="手机(Tel.)" />
       </div>
       <div class="item">
         <div>
           <img class="item_icon" src="../assets/销售型H5-32.png" alt />
         </div>
-        <input class="item_input" type="text" placeholder="需求面积(Sqr.)" />
+        <input v-model="leasinger.sqr" class="item_input" type="text" placeholder="需求面积(Sqr.)" />
       </div>
       <div class="item">
         <div>
           <img class="item_icon" src="../assets/销售型H5-33.png" alt />
         </div>
-        <input class="item_input" type="text" placeholder="详情描述(Details)" />
+        <input
+          v-model="leasinger.detail"
+          class="item_input"
+          type="text"
+          placeholder="详情描述(Details)"
+        />
       </div>
-      <div class="submit">提交Submit</div>
+      <div class="submit" @click="submit">提交Submit</div>
     </div>
   </div>
 </template>
 
 <script>
+import fetch from "@/util/fetch";
 export default {
   data() {
     return {
       startX: 0, // 鼠标开始点击的x坐标
-      startY: 0
+      startY: 0,
+      leasinger: {
+        type: null,
+        name: null,
+        company: null,
+        email: null,
+        tel: null,
+        sqr: null,
+        detail: ""
+      }
     };
   },
   methods: {
+    submit() {
+      for (let key in this.leasinger) {
+        console.log(key + "---" + this.leasinger[key]);
+        if(this.leasinger[key]===null){
+          alert('请填写完成的信息')
+          return
+        }
+      }
+      fetch.post('/leasinger/add',this.leasinger).then(res=>{
+        console.log(res)
+        if(res){
+          alert('提交成功')
+        }
+      })
+      console.log(this.leasinger);
+    },
     addHandler(element, type, handler) {
       if (element.addEventListener) {
         element.addEventListener(type, handler, false);

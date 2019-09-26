@@ -31,10 +31,10 @@ width: 100vw;
 
 <template>
   <div class="page" id="start6">
-    <div class="area_high" @click="gotoDetail(1)"></div>
-    <div class="area_up_mid" @click="gotoDetail(2)"></div>
-    <div class="area_mid" @click="gotoDetail(3)"></div>
-    <div class="area_low" @click="gotoDetail(4)"></div>
+    <div class="area_high" @click="gotoDetail(4)"></div>
+    <div class="area_up_mid" @click="gotoDetail(3)"></div>
+    <div class="area_mid" @click="gotoDetail(2)"></div>
+    <div class="area_low" @click="gotoDetail(1)"></div>
     <div class="tip"><img src="../assets/楼层图-1.png" alt=""></div>
   </div>
 </template>

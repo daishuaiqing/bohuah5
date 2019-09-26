@@ -19,52 +19,22 @@
 </style>
 <template>
   <div>
-    <div>
+    <div v-for="(item,index) in editionList" :key="index">
       <swiper :options="swiperOption" class="swiper-box">
-        <swiper-slide class="swiper-item">
-          <img src="../assets/办公室低区_02.png" alt />
-        </swiper-slide>
-        <swiper-slide class="swiper-item">
-          <img src="../assets/办公室低区_04.png" alt />
+        <swiper-slide v-for="(item,index) in JSON.parse(item.bannerUrls)" :key="index" class="swiper-item">
+          <img :src="item.url" alt />
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
       <div class="floor_des">
-        <span>LOW ZONE（{{floor}}F） SINGLE-TENANT Gross Leasable Area：2634.80 SQM Whole ﬂoor</span>
-      </div>
-    </div>
-    <div>
-      <swiper :options="swiperOption" class="swiper-box">
-        <swiper-slide class="swiper-item">
-          <img src="../assets/办公室低区_02.png" alt />
-        </swiper-slide>
-        <swiper-slide class="swiper-item">
-          <img src="../assets/办公室低区_04.png" alt />
-        </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
-      </swiper>
-      <div class="floor_des">
-        <span>LOW ZONE（{{floor}}F） SINGLE-TENANT Gross Leasable Area：2634.80 SQM Whole ﬂoor</span>
-      </div>
-    </div>
-    <div>
-      <swiper :options="swiperOption" class="swiper-box">
-        <swiper-slide class="swiper-item">
-          <img src="../assets/办公室低区_02.png" alt />
-        </swiper-slide>
-        <swiper-slide class="swiper-item">
-          <img src="../assets/办公室低区_04.png" alt />
-        </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
-      </swiper>
-      <div class="floor_des">
-        <span>LOW ZONE（{{floor}}F） SINGLE-TENANT Gross Leasable Area：2634.80 SQM Whole ﬂoor</span>
+        <span>{{item.introduce}}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import fetch from "@/util/fetch";
 export default {
   data() {
     return {
@@ -77,12 +47,22 @@ export default {
           el: ".swiper-pagination",
           clickable: true
         }
-      }
+      },
+      editionList:[]
     };
   },
   created() {
     console.log(this.$route.query.type);
     this.floor = this.$route.query.type;
+    this.getList(this.$route.query.type)
+  },
+  methods:{
+    getList(typeId){
+      fetch.get('/edition/find/all',{typeId: typeId}).then(res=>{
+        this.editionList=res.data
+        console.log(res.data)
+      })
+    },
   }
 };
 </script>
