@@ -22,7 +22,7 @@
     <div v-for="(item,index) in editionList" :key="index">
       <swiper :options="swiperOption" class="swiper-box">
         <swiper-slide v-for="(item,index) in JSON.parse(item.bannerUrls)" :key="index" class="swiper-item">
-          <img :src="item.url" alt />
+          <img :src="item.url" preview="index">
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
