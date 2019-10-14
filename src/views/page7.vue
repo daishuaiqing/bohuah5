@@ -43,10 +43,14 @@
 }
 .item_input {
   margin-left: 2.5vw;
-  height: 9vw;
+  height: 10vw;
   font-size: 4vw;
   border: none;
   color: #111111;
+  background:none;  
+  outline:none;  
+  border:none;
+  line-height:10vw;
 }
 input {
   outline: none;
