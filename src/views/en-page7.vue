@@ -60,48 +60,48 @@ input {
 <template>
   <div class="page" id="start7">
     <div class="header">
-      <img src="../assets/头图.png" alt />
+      <img src="../static/头图.png" alt />
     </div>
     <div class="form_style">
       <div class="item">
         <div>
-          <img class="item_icon" src="../assets/销售型H5-27.png" alt />
+          <img class="item_icon" src="../static/销售型H5-27.png" alt />
         </div>
         <input v-model="leasinger.type" class="item_input" type="text" placeholder="租赁类别(Leasing)" />
       </div>
       <div class="item">
         <div>
-          <img class="item_icon" src="../assets/销售型H5-28.png" alt />
+          <img class="item_icon" src="../static/销售型H5-28.png" alt />
         </div>
         <input v-model="leasinger.name" class="item_input" type="text" placeholder="姓名(Name)" />
       </div>
       <div class="item">
         <div>
-          <img class="item_icon" src="../assets/销售型H5-29.png" alt />
+          <img class="item_icon" src="../static/销售型H5-29.png" alt />
         </div>
         <input v-model="leasinger.company" class="item_input" type="text" placeholder="公司(Company)" />
       </div>
       <div class="item">
         <div>
-          <img class="item_icon" src="../assets/销售型H5-30.png" alt />
+          <img class="item_icon" src="../static/销售型H5-30.png" alt />
         </div>
         <input v-model="leasinger.email" class="item_input" type="text" placeholder="电子邮件(E-mail)" />
       </div>
       <div class="item">
         <div>
-          <img class="item_icon" src="../assets/销售型H5-31.png" alt />
+          <img class="item_icon" src="../static/销售型H5-31.png" alt />
         </div>
         <input v-model="leasinger.tel" class="item_input" type="text" placeholder="手机(Tel.)" />
       </div>
       <div class="item">
         <div>
-          <img class="item_icon" src="../assets/销售型H5-32.png" alt />
+          <img class="item_icon" src="../static/销售型H5-32.png" alt />
         </div>
         <input v-model="leasinger.sqr" class="item_input" type="text" placeholder="需求面积(Sqr.)" />
       </div>
       <div class="item">
         <div>
-          <img class="item_icon" src="../assets/销售型H5-33.png" alt />
+          <img class="item_icon" src="../static/销售型H5-33.png" alt />
         </div>
         <input
           v-model="leasinger.detail"

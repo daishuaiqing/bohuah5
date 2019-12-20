@@ -2,7 +2,7 @@
 .page {
   height: 100vh;
   width: 100vw;
-  background: url(../assets/地铁线路图.png);
+  background: url(../static/地铁线路图.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }

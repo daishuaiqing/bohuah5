@@ -6,7 +6,7 @@ body {
 .page {
   height: 100vh;
   width: 100vw;
-  background: url(../assets/2.png);
+  background: url(../static/2.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -24,8 +24,8 @@ body {
 
 <template>
   <div class="page" id="start2">
-    <img class="top_pic" src="../assets/2-1.png" alt />
-    <img class="bt_pic" src="../assets/2-2.png" alt />
+    <img class="top_pic" src="../static/2-1.png" alt />
+    <img class="bt_pic" src="../static/2-2.png" alt />
   </div>
 </template>
 

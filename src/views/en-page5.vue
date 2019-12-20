@@ -37,19 +37,19 @@
   <div class="page" id="start5">
     <swiper :options="swiperOption" class="swiper-box">
       <swiper-slide class="swiper-item">
-        <img src="../assets/实景图-1.png" alt />
+        <img src="../static/实景图-1.png" alt />
       </swiper-slide>
       <swiper-slide class="swiper-item">
-        <img src="../assets/实景图-2.png" alt />
+        <img src="../static/实景图-2.png" alt />
       </swiper-slide>
       <swiper-slide class="swiper-item">
-        <img src="../assets/实景图-3.png" alt />
+        <img src="../static/实景图-3.png" alt />
       </swiper-slide>
       <swiper-slide class="swiper-item">
-        <img src="../assets/实景图-4.png" alt />
+        <img src="../static/实景图-4.png" alt />
       </swiper-slide>
       <swiper-slide class="swiper-item">
-        <img src="../assets/实景图-5.png" alt />
+        <img src="../static/实景图-5.png" alt />
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>

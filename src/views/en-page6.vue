@@ -2,7 +2,7 @@
 .page {
   height: 100vh;
   width: 100vw;
-  background: url(../assets/楼层图.png);
+  background: url(../static/楼层图.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -35,7 +35,7 @@ width: 100vw;
     <div class="area_up_mid" @click="gotoDetail(3)"></div>
     <div class="area_mid" @click="gotoDetail(2)"></div>
     <div class="area_low" @click="gotoDetail(1)"></div>
-    <div class="tip"><img src="../assets/楼层图-1.png" alt=""></div>
+    <div class="tip"><img src="../static/楼层图-1.png" alt=""></div>
   </div>
 </template>
 

@@ -61,7 +61,7 @@ export default {
 <style scoped>
 .page {
   height: 100vh;
-  background: url(../assets/1.png);
+  background: url(../static/1.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
