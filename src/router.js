@@ -9,6 +9,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'index',
+      component: () => import('./views/index.vue')
+    },
+    {
+      path: '/page1',
       name: 'page1',
       meta: {
         index: 0,
