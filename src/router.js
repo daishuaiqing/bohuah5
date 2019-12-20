@@ -83,6 +83,78 @@ export default new Router({
         title: '办公楼'
       },
       component: () => import('./views/page8.vue')
+    },
+    {
+      path: '/enpage1',
+      name: 'enpage1',
+      meta: {
+        index: 10,
+        title: '博华广场'
+      },
+      component: () => import('./views/en-page1.vue')
+    },
+    {
+      path: '/enpage2',
+      name: 'enpage2',
+      meta: {
+        index: 11,
+        title: '博华广场'
+      },
+      component: () => import('./views/en-page2.vue')
+    },
+    {
+      path: '/enpage3',
+      name: 'enpage3',
+      meta: {
+        index: 12,
+        title: '地铁线路图'
+      },
+      component: () => import('./views/en-page3.vue')
+    },
+    {
+      path: '/enpage4',
+      name: 'enpage4',
+      meta: {
+        index: 13,
+        title: '地块图'
+      },
+      component: () => import('./views/en-page4.vue')
+    },
+    {
+      path: '/enpage5',
+      name: 'enpage5',
+      meta: {
+        index: 14,
+        title: '实景图'
+      },
+      component: () => import('./views/en-page5.vue')
+    },
+    {
+      path: '/enpage6',
+      name: 'enpage6',
+      meta: {
+        index: 15,
+        title: '楼层图'
+      },
+      component: () => import('./views/en-page6.vue')
+    },
+    {
+      path: '/enpage7',
+      name: 'enpage7',
+      meta: {
+        index: 16,
+        title: '租赁服务咨询'
+      },
+      component: () => import('./views/en-page7.vue')
+    },
+    {
+      path: '/enpage8',
+      name: 'enpage8',
+      meta: {
+        index: 17,
+        title: '办公楼'
+      },
+      component: () => import('./views/en-page8.vue')
     }
   ]
 })
